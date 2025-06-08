@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: ecs-test-deploy'
+
+
+custom-app-name: ${CUSTOM_APP_NAME:this is dev profile}
+app.version: ${APP_VERSION:2.0.1}

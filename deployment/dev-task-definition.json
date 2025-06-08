@@ -1,0 +1,43 @@
+{
+  "family": "ecs-test-deploy-task-defination-family",
+  "networkMode": "awsvpc",
+  "containerDefinitions": [
+    {
+      "name": "ecs-test-deploy-api-container",
+      "image": "192579874110.dkr.ecr.us-east-2.amazonaws.com/ecs-test-deploy-ecr:49946c8bf5abf6e2c3d2766d785b431cbdfb39dc",
+      "memory": 512,
+      "cpu": 256,
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 8080,
+          "hostPort": 8080,
+          "protocol": "tcp",
+          "appProtocol": "http"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-create-group": "true",
+          "awslogs-group": "/ecs/ecs-test-deploy-logs",
+          "awslogs-region": "us-east-2",
+          "awslogs-stream-prefix": "ecs-test-deploy"
+        }
+      },
+      "environment": [
+        { "name": "CUSTOM_APP_NAME", "value": "35345345354DEV" },
+        { "name": "APP_VERSION", "value": "1.1.9" },
+        { "name": "MONGO_DB_NAME", "value": "demo_database" },
+        { "name": "SERVER_PORT", "value": "8080" }
+      ]
+    }
+  ],
+  "requiresCompatibilities": [
+    "EC2"
+  ],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "arn:aws:iam::192579874110:role/ecsTaskExecutionRole-for-savah-saf-api-cluster",
+  "taskRoleArn": "arn:aws:iam::192579874110:role/ecsTaskExecutionRole-for-savah-saf-api-cluster"
+}
