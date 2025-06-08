@@ -30,11 +30,11 @@ jobs:
       matrix:
         include:
           - env: dev
-            ECS_SERVICE: ecs-test-deploy-task-defination-family-service-9vttxs1k
+            ECS_SERVICE: ecs-test-deploy-task-defination-family-service-dn8avkrj-dev
             ECS_TASK_DEFINITION: deployment/dev-task-definition.json
             CONTAINER_NAME: ecs-test-deploy-api-container 
           - env: prod
-            ECS_SERVICE: ecs-test-deploy-task-defination-family-service-ied12a74-prod
+            ECS_SERVICE: ecs-test-deploy-task-defination-family-service-qu49gdam-prod
             ECS_TASK_DEFINITION: deployment/dev-task-definition.json
             CONTAINER_NAME: ecs-test-deploy-api-container #can't change container name either here or in the task defination, only approach is to create a new task defiation for prod
 
