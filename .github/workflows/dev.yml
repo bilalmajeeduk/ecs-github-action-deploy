@@ -1,0 +1,17 @@
+# .github/workflows/dev.yml
+name: Deploy Dev
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  call-deploy:
+    uses: ./.github/workflows/deploy.yaml
+    with:
+      env: dev
+      ecs_service: ecs-test-deploy-task-defination-family-service-dn8avkrj-dev
+      ecs_task_definition: deployment/dev-task-definition.json
+      container_name: ecs-test-deploy-api-container
+    secrets:
+      AWS_ACCESS_KEY_ID:     ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

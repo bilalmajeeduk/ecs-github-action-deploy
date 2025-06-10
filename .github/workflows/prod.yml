@@ -1,0 +1,17 @@
+# .github/workflows/prod.yml
+name: Deploy Prod
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  call-deploy:
+    uses: ./.github/workflows/deploy.yaml
+    with:
+      env: prod
+      ecs_service: ecs-test-deploy-task-defination-family-service-qu49gdam-prod
+      ecs_task_definition: deployment/prod-task-definition.json
+      container_name: ecs-test-deploy-api-container
+    secrets:
+      AWS_ACCESS_KEY_ID:     ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
