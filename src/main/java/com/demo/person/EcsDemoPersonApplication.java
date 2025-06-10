@@ -9,7 +9,7 @@ public class EcsDemoPersonApplication {
     public static void main(String[] args) {
         SpringApplication.run(EcsDemoPersonApplication.class, args);
 
-        System.out.println("Hello World from the main method! - ECS DEMO 24 May 2021");
+        System.out.println("Hello World from the main method! - ECS DEMO 24 May 2025");
 
     }
 

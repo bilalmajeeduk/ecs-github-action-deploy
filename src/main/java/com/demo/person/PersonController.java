@@ -27,7 +27,7 @@ public class PersonController {
 
     @GetMapping(value="/person")
     public String getPerson() {
-        return "HELLO COMING FROM BILAL MACBOOK Refactored - " + appName + " - " + appVersion + " - " + LocalDateTime.now();
+        return "HELLO COMING FROM BILAL MACBOOK Refactored - " + appName + " - " + appVersion + " - " + LocalDateTime.now() + " - " + "Now same docker image deploying to prod and dev env";
     }
 
 
