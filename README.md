@@ -7,12 +7,12 @@
 
 Here’s the updated architecture diagram featuring:
 
-User → GitHub Actions with GitHub Secrets
-Amazon ECR storing the Docker image
-AWS CloudWatch for logs and monitoring
-Amazon ECS in a public VPC using AWS Fargate
-Task Definition feeding into two services: Dev & Prod
-Both services deployed to AWS ECS fargate profile
+* User → GitHub Actions with GitHub Secrets.
+* Amazon ECR storing the Docker image.
+* AWS CloudWatch for logs and monitoring.
+* Amazon ECS in a public VPC using AWS Fargate.
+* Task Definition feeding into two services: Dev & Prod.
+* Both services deployed to AWS ECS fargate profile.
 
 
 Working URL to test
