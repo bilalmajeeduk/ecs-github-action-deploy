@@ -1,7 +1,7 @@
 # ecs-github-action-deploy-to-ECS-fargate
 
 
-![AWS Architecture Diagram](/AWSArchitectureDiagram.png)
+![AWS Architecture Diagram](/AWS-ArchitectureDiagram.png)
 
 
 
