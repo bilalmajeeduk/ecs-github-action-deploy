@@ -10,7 +10,7 @@ jobs:
     with:
       env: prod
       ecs_service: ecs-test-deploy-task-defination-family-service-qu49gdam-prod
-      ecs_task_definition: deployment/prod-task-definition.json
+      ecs_task_definition: deployment/dev-task-definition.json
       container_name: ecs-test-deploy-api-container
     secrets:
       AWS_ACCESS_KEY_ID:     ${{ secrets.AWS_ACCESS_KEY_ID }}
