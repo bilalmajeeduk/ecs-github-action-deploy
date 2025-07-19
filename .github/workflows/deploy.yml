@@ -41,6 +41,7 @@ jobs:
       ECR_REPOSITORY: ${{ inputs.ecr_repository }}
       ECS_CLUSTER: ${{ inputs.ecs_cluster }}
       IMAGE_TAG: ${{ inputs.image_tag }}
+      AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
 
     steps:
       - uses: actions/checkout@v4
