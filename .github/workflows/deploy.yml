@@ -83,6 +83,13 @@ jobs:
           echo "image=${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}" \
             >> $GITHUB_OUTPUT
 
+      # ---------- NEW STEP: expand ${AWS_ACCOUNT_ID} ----------
+      - name: Substitute account ID in taskdef
+        run: |
+          sudo apt-get update -y && sudo apt-get install -y gettext-base
+          envsubst < ${{ inputs.ecs_task_definition }} > taskdef.rendered.json
+      # --------------------------------------------------------
+
       - name: Render ECS task definition
         id: task-def
         uses: aws-actions/amazon-ecs-render-task-definition@v1
